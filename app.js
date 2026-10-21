@@ -1,17 +1,33 @@
+// Interactive Save button functionality
+const saveBtn = document.getElementById("saveOfferBtn");
+if (saveBtn) {
+  saveBtn.addEventListener("click", () => {
+    if (saveBtn.textContent === "Save") {
+      saveBtn.textContent = "Saved ✓";
+      saveBtn.style.background = "#ffffff";
+      saveBtn.style.color = "#007458";
+    } else {
+      saveBtn.textContent = "Save";
+      saveBtn.style.background = "#a9e8d4";
+      saveBtn.style.color = "#003e2f";
+    }
+  });
+}
 
-const message = document.getElementById("message");
-const button = document.getElementById("changeButton");
-
-button.addEventListener("click", () => {
-  message.textContent = "Your app works!";
-  button.textContent = "Success!";
+// Bottom nav tab switching effect
+const navItems = document.querySelectorAll(".nav-item");
+navItems.forEach((item) => {
+  item.addEventListener("click", () => {
+    navItems.forEach((el) => el.classList.remove("active"));
+    item.classList.add("active");
+  });
 });
 
+// Register Service Worker
 if ("serviceWorker" in navigator) {
   window.addEventListener("load", () => {
-    navigator.serviceWorker.register("./sw.js")
-      .catch(error => {
-        console.error("Service worker failed:", error);
-      });
+    navigator.serviceWorker.register("./sw.js").catch((error) => {
+      console.error("Service worker registration failed:", error);
+    });
   });
 }
