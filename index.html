@@ -3,7 +3,13 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
+  <meta name="theme-color" content="#e3eff7" />
   <title>PayPal - Accounts</title>
+
+  <!-- PWA Manifest Link (Required for Installation) -->
+  <link rel="manifest" href="./manifest.json" />
+  <link rel="apple-touch-icon" href="./icon-192.png" />
+
   <style>
     * {
       box-sizing: border-box;
@@ -28,8 +34,8 @@
       width: 100vw;
       height: 100vh;
       height: 100dvh;
-      max-width: 412px; /* Standard Samsung A-series width */
-      max-height: 915px; /* Standard Samsung A-series height */
+      max-width: 412px;
+      max-height: 915px;
       background: linear-gradient(180deg, #e3eff7 0%, #e9f4fa 35%, #e2eef7 100%);
       display: flex;
       flex-direction: column;
@@ -152,7 +158,6 @@
       letter-spacing: -0.1px;
     }
 
-    /* Softer, authentic $0.00 */
     .balance-number {
       font-size: 42px;
       font-weight: 600;
@@ -285,7 +290,6 @@
       box-shadow: 0 2px 10px rgba(0, 0, 0, 0.02);
     }
 
-    /* Softer, authentic 0 pts */
     .rewards-points {
       font-size: 32px;
       font-weight: 600;
@@ -309,7 +313,7 @@
       white-space: nowrap;
     }
 
-    /* Peeking Bottom Section (Cut off exactly like screenshot) */
+    /* Peeking Bottom Section */
     .peeking-footer-section {
       margin-top: 24px;
       padding-bottom: 30px;
@@ -351,7 +355,6 @@
       cursor: pointer;
     }
 
-    /* ACTIVE TAB: Accounts (Teal Green) */
     .nav-item.active {
       color: #007458;
       font-weight: 700;
@@ -406,7 +409,6 @@
           </svg>
         </button>
 
-        <!-- Pulls pfp.png from your repository root -->
         <div class="avatar-ring">
           <img src="./pfp.png" alt="Profile" />
         </div>
@@ -415,10 +417,8 @@
 
     <!-- Main Content -->
     <main class="content-body">
-      <!-- Title -->
       <h1 class="page-title">Accounts</h1>
 
-      <!-- Chips / Pills -->
       <section class="chips-scroll">
         <button class="chip">Add banks and cards</button>
         <button class="chip">Add cash at stores</button>
@@ -432,7 +432,6 @@
           <div class="balance-number">$23,584.19</div>
           <span class="available-text">Available balance</span>
 
-          <!-- 3 Actions: Add Money, Transfer, Account Info -->
           <div class="actions-row">
             <div class="action-btn">
               <div class="action-icon">
@@ -469,7 +468,6 @@
           </div>
         </div>
 
-        <!-- Cyan Banner with mini Mastercard -->
         <div class="cyan-banner">
           <p>Get the PayPal Debit Card and earn 5% cash back in a monthly category you choose</p>
           <div class="mini-card-graphic">
@@ -494,13 +492,13 @@
         </div>
       </section>
 
-      <!-- Bottom Peeking Section (Clipped by bottom nav) -->
+      <!-- Bottom Peeking Section -->
       <section class="peeking-footer-section">
         <h2 class="section-title">Pay with convenience and flexibility</h2>
       </section>
     </main>
 
-    <!-- Bottom Navigation Bar (Accounts Tab Active) -->
+    <!-- Bottom Navigation Bar -->
     <nav class="bottom-nav">
       <button class="nav-item">
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -510,7 +508,6 @@
         <span>Home</span>
       </button>
 
-      <!-- ACTIVE TAB -->
       <button class="nav-item active">
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
           <rect x="2" y="6" width="20" height="14" rx="3"></rect>
@@ -551,5 +548,7 @@
     </nav>
   </div>
 
+  <!-- Connected Script -->
+  <script src="./app.js"></script>
 </body>
 </html>

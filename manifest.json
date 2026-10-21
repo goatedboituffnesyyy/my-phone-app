@@ -2,23 +2,23 @@
   "id": "./",
   "name": "PayPal",
   "short_name": "PayPal",
-  "start_url": "./",
+  "start_url": "./index.html",
   "scope": "./",
   "display": "standalone",
-  "background_color": "#E4F0F8",
-  "theme_color": "#0070E0",
+  "background_color": "#E3EFF7",
+  "theme_color": "#E3EFF7",
   "icons": [
     {
       "src": "./icon-192.png",
       "sizes": "192x192",
       "type": "image/png",
-      "purpose": "any"
+      "purpose": "any maskable"
     },
     {
       "src": "./icon-512.png",
       "sizes": "512x512",
       "type": "image/png",
-      "purpose": "any"
+      "purpose": "any maskable"
     }
   ]
 }
